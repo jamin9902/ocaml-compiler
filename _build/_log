@@ -1,0 +1,20 @@
+### Starting build.
+# Target: evaluation.ml.depends, tags: { warn(A-4-33-40-41-42-43-34-44), extension:ml, file:evaluation.ml, not_hygienic, ocaml, ocamldep, quiet, strict-sequence, thread, traverse, use_str }
+ocamlfind ocamldep -modules evaluation.ml > evaluation.ml.depends # cached
+# Target: bignum.ml.depends, tags: { warn(A-4-33-40-41-42-43-34-44), extension:ml, file:bignum.ml, not_hygienic, ocaml, ocamldep, quiet, strict-sequence, thread, traverse, use_str }
+ocamlfind ocamldep -modules bignum.ml > bignum.ml.depends # cached
+# Target: bignum.cmo, tags: { warn(A-4-33-40-41-42-43-34-44), byte, compile, extension:cmo, extension:ml, file:bignum.cmo, file:bignum.ml, implem, not_hygienic, ocaml, quiet, strict-sequence, thread, traverse, use_str }
+ocamlfind ocamlc -c -thread -strict-sequence -w A-4-33-40-41-42-43-34-44 -o bignum.cmo bignum.ml # cached
+# Target: expr.mli.depends, tags: { warn(A-4-33-40-41-42-43-34-44), extension:mli, file:expr.mli, not_hygienic, ocaml, ocamldep, quiet, strict-sequence, thread, traverse, use_str }
+ocamlfind ocamldep -modules expr.mli > expr.mli.depends # cached
+# Target: expr.cmi, tags: { warn(A-4-33-40-41-42-43-34-44), byte, compile, extension:mli, file:expr.mli, interf, not_hygienic, ocaml, quiet, strict-sequence, thread, traverse, use_str }
+ocamlfind ocamlc -c -thread -strict-sequence -w A-4-33-40-41-42-43-34-44 -o expr.cmi expr.mli # cached
+# Target: evaluation.cmo, tags: { warn(A-4-33-40-41-42-43-34-44), byte, compile, extension:cmo, extension:ml, file:evaluation.cmo, file:evaluation.ml, implem, not_hygienic, ocaml, quiet, strict-sequence, thread, traverse, use_str }
+ocamlfind ocamlc -c -thread -strict-sequence -w A-4-33-40-41-42-43-34-44 -o evaluation.cmo evaluation.ml # cached
+# Target: expr.ml.depends, tags: { warn(A-4-33-40-41-42-43-34-44), extension:ml, file:expr.ml, not_hygienic, ocaml, ocamldep, quiet, strict-sequence, thread, traverse, use_str }
+ocamlfind ocamldep -modules expr.ml > expr.ml.depends # cached
+# Target: expr.cmo, tags: { warn(A-4-33-40-41-42-43-34-44), byte, compile, extension:cmo, extension:ml, file:expr.cmo, file:expr.ml, implem, not_hygienic, ocaml, quiet, strict-sequence, thread, traverse, use_str }
+ocamlfind ocamlc -c -thread -strict-sequence -w A-4-33-40-41-42-43-34-44 -o expr.cmo expr.ml # cached
+# Target: evaluation.byte, tags: { warn(A-4-33-40-41-42-43-34-44), byte, dont_link_with, extension:byte, file:evaluation.byte, link, not_hygienic, ocaml, program, quiet, strict-sequence, thread, traverse, use_str }
+ocamlfind ocamlc -linkpkg str.cma -thread bignum.cmo expr.cmo evaluation.cmo -o evaluation.byte
+# Compilation successful.
